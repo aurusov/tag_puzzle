@@ -218,16 +218,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 257064638}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12331, y: 0.93169, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -23.67552, y: 178.88448, z: -17280}
+  m_LocalScale: {x: 192, y: 192, z: 192}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2077114213}
   - {fileID: 1898813394}
   - {fileID: 1719817034}
   - {fileID: 1348356914}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 709695819}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &269665289
 PrefabInstance:
@@ -812,6 +812,7 @@ RectTransform:
   m_Children:
   - {fileID: 992052645}
   - {fileID: 1558352356}
+  - {fileID: 257064639}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1200,7 +1201,7 @@ GameObject:
   - component: {fileID: 1348356914}
   - component: {fileID: 1348356913}
   m_Layer: 0
-  m_Name: Square (3)
+  m_Name: BorderSquare4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1424,7 +1425,7 @@ GameObject:
   - component: {fileID: 1719817034}
   - component: {fileID: 1719817033}
   m_Layer: 0
-  m_Name: Square (2)
+  m_Name: BorderSquare3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1585,7 +1586,7 @@ GameObject:
   - component: {fileID: 1898813394}
   - component: {fileID: 1898813393}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: BorderSquare2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1951,7 +1952,7 @@ GameObject:
   - component: {fileID: 2077114213}
   - component: {fileID: 2077114212}
   m_Layer: 0
-  m_Name: Square
+  m_Name: BorderSquare1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2180,5 +2181,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 632558779}
   - {fileID: 823442307}
-  - {fileID: 257064639}
   - {fileID: 709695819}
