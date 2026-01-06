@@ -2,6 +2,10 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
+
+.vscode/
+.DS_Store
+
 .utmp/
 /[Ll]ibrary/
 /[Tt]emp/
@@ -30,8 +34,6 @@
 /[Aa]ssets/Plugins/Editor/JetBrains*
 # Jetbrains Rider personal-layer settings
 *.DotSettings.user
-
-.vscode/
 
 # Gradle cache directory
 .gradle/
