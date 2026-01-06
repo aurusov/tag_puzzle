@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 public class Field : MonoBehaviour
 {
     public UIDocument UiDocument;
-    public float Border = 0.1f;
+    public float Border = 0.07f;
     private Number[] Numbers;
     private Label WinLabel;
 
@@ -118,13 +118,14 @@ public class Field : MonoBehaviour
 
     void Render()
     {
-        Vector2 numberSize = Numbers[0].GetComponent<SpriteRenderer>().size;
+        Vector2 numberSize = Numbers[0].GetComponent<SpriteRenderer>().size * Numbers[0].transform.lossyScale;
+        var border = Border * Numbers[0].transform.lossyScale.x;
         int x = 0;
         int y = 0;
-        Vector3 startPosition = new(-1 * (numberSize.x * 1.5f + Border + Border / 2), numberSize.y * 1.5f + Border + Border / 2, 0f);
+        Vector3 startPosition = new(-1 * (numberSize.x * 1.5f + border + border / 2), numberSize.y * 1.5f + border + border / 2, 0f);
         foreach (Number number in Numbers)
         {
-            number.transform.position = new Vector3(startPosition.x + (numberSize.x + Border) * x, startPosition.y - (numberSize.y + Border) * y, startPosition.z);
+            number.transform.position = new Vector3(startPosition.x + (numberSize.x + border) * x, startPosition.y - (numberSize.y + border) * y, startPosition.z);
             ++x;
             if (x == 4)
             {
