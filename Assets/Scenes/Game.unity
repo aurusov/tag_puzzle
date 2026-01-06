@@ -729,7 +729,7 @@ GameObject:
   - component: {fileID: 709695817}
   - component: {fileID: 709695816}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: FieldCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -810,6 +810,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 992052645}
   - {fileID: 1558352356}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1107,11 +1108,11 @@ Transform:
   m_GameObject: {fileID: 992052643}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.83813, y: -3.06797, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.000030517576, y: -0.000061035153, z: -15586.666}
+  m_LocalScale: {x: 173.1852, y: 173.1852, z: 173.1852}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1558352356}
+  m_Father: {fileID: 709695819}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1165460921
 PrefabInstance:
@@ -1324,7 +1325,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 759903945}
-  - {fileID: 992052645}
   - {fileID: 82284483}
   - {fileID: 872385449}
   - {fileID: 2012282096}
