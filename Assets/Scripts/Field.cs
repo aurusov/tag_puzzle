@@ -69,7 +69,17 @@ public class Field : MonoBehaviour
         }
         else if (Mouse.current.leftButton.wasPressedThisFrame)
         {
+            Debug.Log("Mouse position: " + Mouse.current.position.value);
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Mouse.current.position.value), Vector2.zero);
+            if (hit.collider)
+            {
+                PressNumber(hit.collider.gameObject.GetComponent<Number>());
+            }
+        }
+        else if (Input.touchCount > 0 && Input.GetTouch(0).phase == UnityEngine.TouchPhase.Began)
+        {
+            Debug.Log("Touch position: " + Input.GetTouch(0).position);
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position), Vector2.zero);
             if (hit.collider)
             {
                 PressNumber(hit.collider.gameObject.GetComponent<Number>());
@@ -97,9 +107,7 @@ public class Field : MonoBehaviour
 
     Number GetNumber(int value)
     {
-        var result = Array.Find<Number>(Numbers, number => number.Value == value);
-        if (result == null)
-            throw new IndexOutOfRangeException("Number not found: " + value);
+        var result = Array.Find(Numbers, number => number.Value == value) ?? throw new IndexOutOfRangeException("Number not found: " + value);
         return result;
     }
 
