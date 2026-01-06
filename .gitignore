@@ -5,6 +5,7 @@
 
 .vscode/
 .DS_Store
+*.slnx
 
 .utmp/
 /[Ll]ibrary/
