@@ -67,19 +67,21 @@ public class Field : MonoBehaviour
         {
             Finish();
         }
-        else if (Mouse.current.leftButton.wasPressedThisFrame)
+        else if (Pointer.current != null && Pointer.current.press.wasPressedThisFrame)
         {
-            Debug.Log("Mouse position: " + Mouse.current.position.value);
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Mouse.current.position.value), Vector2.zero);
-            if (hit.collider)
+            Camera mainCamera = Camera.main;
+            if (mainCamera == null)
             {
-                PressNumber(hit.collider.gameObject.GetComponent<Number>());
+                Debug.LogError("Field.Update: Camera.main is null", this);
+                Render();
+                return;
             }
-        }
-        else if (Input.touchCount > 0 && Input.GetTouch(0).phase == UnityEngine.TouchPhase.Began)
-        {
-            Debug.Log("Touch position: " + Input.GetTouch(0).position);
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position), Vector2.zero);
+
+            Vector2 pointerPosition = Pointer.current.position.ReadValue();
+            Debug.Log("Pointer position: " + pointerPosition);
+
+            Vector3 worldPoint = mainCamera.ScreenToWorldPoint(pointerPosition);
+            RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
             if (hit.collider)
             {
                 PressNumber(hit.collider.gameObject.GetComponent<Number>());
@@ -159,5 +161,4 @@ public class Field : MonoBehaviour
         }
         WinLabel.style.display = DisplayStyle.Flex;
     }
-
 }
